@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "threejs-exercise", "threejs-exercise\threejs-exercise.csproj", "{ABF859C4-E963-40EC-B7E0-37BA22A547AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABF859C4-E963-40EC-B7E0-37BA22A547AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF859C4-E963-40EC-B7E0-37BA22A547AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF859C4-E963-40EC-B7E0-37BA22A547AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF859C4-E963-40EC-B7E0-37BA22A547AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87501055-E472-42C0-98B4-832CC50B568C}
+	EndGlobalSection
+EndGlobal
