@@ -26,14 +26,78 @@ public class HomeController : Controller
         return View();
     }
 
-
     public IActionResult xIncr(double x, double y, double z)
     {
         Cube cube = new Cube
         {
-            x = x+0.1,
+            x = x + 0.2,
             y = y,
-            z = 1
+            z = z
+        };
+
+        ViewBag.Message = cube;
+        return View("Index");
+    }
+
+    public IActionResult xDecr(double x, double y, double z)
+    {
+        Cube cube = new Cube
+        {
+            x = x - 0.2,
+            y = y,
+            z = z
+        };
+
+        ViewBag.Message = cube;
+        return View("Index");
+    }
+
+    public IActionResult yIncr(double x, double y, double z)
+    {
+        Cube cube = new Cube
+        {
+            x = x,
+            y = y + 0.2,
+            z = z
+        };
+
+        ViewBag.Message = cube;
+        return View("Index");
+    }
+
+    public IActionResult yDecr(double x, double y, double z)
+    {
+        Cube cube = new Cube
+        {
+            x = x,
+            y = y - 0.2,
+            z = z
+        };
+
+        ViewBag.Message = cube;
+        return View("Index");
+    }
+
+    public IActionResult zIncr(double x, double y, double z)
+    {
+        Cube cube = new Cube
+        {
+            x = x,
+            y = y,
+            z = z + 0.2
+        };
+
+        ViewBag.Message = cube;
+        return View("Index");
+    }
+
+    public IActionResult zDecr(double x, double y, double z)
+    {
+        Cube cube = new Cube
+        {
+            x = x,
+            y = y,
+            z = z - 0.2
         };
 
         ViewBag.Message = cube;

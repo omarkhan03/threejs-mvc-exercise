@@ -4,16 +4,43 @@
     ViewBag.Title = "Index";
 }
 
-<div class="text-center dflex flex-row" style="margin-top: -60px;">
+<div class="text-center dflex flex-row" style="">
     @{
         var data = ViewBag.Message;
     }
-    <a style="margin-top:60px;" asp-area="" asp-controller="Home"
-       asp-action="xIncr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
-        +
-    </a>
 
-    <button style="margin-top:60px;">-</button>
+    <div class="incrementers">
+        <a class="reset" asp-area="" asp-controller="Home"
+           asp-action="Index">
+            Reset
+        </a>
+        <a class="edit" style="" asp-area="" asp-controller="Home"
+           asp-action="xIncr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+            Increment x
+        </a>
+        <a class="edit" style="" asp-area="" asp-controller="Home"
+           asp-action="xDecr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+            Decrement x
+        </a>
+
+        <a class="edit" style="" asp-area="" asp-controller="Home"
+           asp-action="yIncr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+            Increment y
+        </a>
+        <a class="edit" style="" asp-area="" asp-controller="Home"
+           asp-action="yDecr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+            Decrement y
+        </a>
+
+        <a class="edit" style="" asp-area="" asp-controller="Home"
+           asp-action="zIncr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+            Increment z
+        </a>
+        <a class="edit" style="" asp-area="" asp-controller="Home"
+           asp-action="zDecr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+            Decrement z
+        </a>
+    </div>
 
     <script src="~/js/three.js"></script>
     <script>const scene = new THREE.Scene();
