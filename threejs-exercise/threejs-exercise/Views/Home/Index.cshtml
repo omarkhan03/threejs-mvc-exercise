@@ -47,9 +47,9 @@
     </div>
 
     <div class="dims">
-        <div>x: @data.x</div>
-        <div>y: @data.y</div>
-        <div>z: @data.x</div>
+        x: @data.x @Html.Raw("&nbsp &nbsp")
+        y: @data.y @Html.Raw("&nbsp &nbsp")
+        z: @data.z
     </div>
 
 
@@ -69,10 +69,12 @@
         scene.add(cube);
 
         const edges = new THREE.EdgesGeometry(geometry);
-        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
+        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x000000 }));
         scene.add(line);
 
         camera.position.z = 5;
+        camera.position.y = -1;
+
 
         function animate() {
             requestAnimationFrame(animate);

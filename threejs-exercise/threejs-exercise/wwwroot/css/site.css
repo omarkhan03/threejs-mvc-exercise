@@ -17,17 +17,17 @@ body {
    background-color: black;
 }
 
+.incrementers {
+    margin-top: 20px;
+}
+
 .incrementers a {
     text-decoration: none;
     color: white;
 
-    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 .reset {
@@ -39,6 +39,6 @@ body {
 }
 
 .dims {
-    margin-top: 10px;
+    margin-top: 20px;
     color: white;
 }
