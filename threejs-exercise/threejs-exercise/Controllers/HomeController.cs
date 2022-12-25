@@ -15,12 +15,29 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Cube cube = new Cube
+        {
+            x = 1,
+            y = 1,
+            z = 1
+        };
+
+        ViewBag.Message = cube;
         return View();
     }
 
-    public IActionResult Privacy()
+
+    public IActionResult xIncr(double x, double y, double z)
     {
-        return View();
+        Cube cube = new Cube
+        {
+            x = x+0.1,
+            y = y,
+            z = 1
+        };
+
+        ViewBag.Message = cube;
+        return View("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

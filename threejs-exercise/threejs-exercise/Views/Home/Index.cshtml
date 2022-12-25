@@ -1,18 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using threejs_exercise.Models;
+
+@{
+    ViewBag.Title = "Index";
 }
 
-<div class="text-center">
+<div class="text-center dflex flex-row" style="margin-top: -60px;">
+    @{
+        var data = ViewBag.Message;
+    }
+    <a style="margin-top:60px;" asp-area="" asp-controller="Home"
+       asp-action="xIncr" asp-route-x="@data.x" asp-route-y="@data.y" asp-route-z="@data.z">
+        +
+    </a>
+
+    <button style="margin-top:60px;">-</button>
+
     <script src="~/js/three.js"></script>
-    <script>
-        const scene = new THREE.Scene();
+    <script>const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
+        const geometry = new THREE.BoxGeometry(@data.x, @data.y, @data.z);
         const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
@@ -21,9 +32,10 @@
 
         function animate() {
             requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
             renderer.render(scene, camera);
         }
-        animate();
-    </script>
+        animate();</script>
 </div>
 
