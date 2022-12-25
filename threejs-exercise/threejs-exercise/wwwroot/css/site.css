@@ -13,11 +13,12 @@ html {
   min-height: 100%;
 }
 
+body {
+   background-color: black;
+}
+
 .incrementers a {
     text-decoration: none;
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
     color: white;
 
     margin-top: 10px;
@@ -35,4 +36,9 @@ html {
 
 .edit {
     background-color: lightseagreen;
+}
+
+.dims {
+    margin-top: 10px;
+    color: white;
 }

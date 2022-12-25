@@ -7,6 +7,10 @@
 <div class="text-center dflex flex-row" style="">
     @{
         var data = ViewBag.Message;
+        data.x = Math.Round(data.x, 1);
+        data.y = Math.Round(data.y, 1);
+        data.z = Math.Round(data.z, 1);
+
     }
 
     <div class="incrementers">
@@ -42,6 +46,15 @@
         </a>
     </div>
 
+    <div class="dims">
+        <div>x: @data.x</div>
+        <div>y: @data.y</div>
+        <div>z: @data.x</div>
+    </div>
+
+
+
+
     <script src="~/js/three.js"></script>
     <script>const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -51,9 +64,13 @@
         document.body.appendChild(renderer.domElement);
 
         const geometry = new THREE.BoxGeometry(@data.x, @data.y, @data.z);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const material = new THREE.MeshBasicMaterial({ color: 0x20b2aa });
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
+
+        const edges = new THREE.EdgesGeometry(geometry);
+        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
+        scene.add(line);
 
         camera.position.z = 5;
 
@@ -61,6 +78,8 @@
             requestAnimationFrame(animate);
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
+            line.rotation.x += 0.01;
+            line.rotation.y += 0.01;
             renderer.render(scene, camera);
         }
         animate();</script>
